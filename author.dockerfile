@@ -17,7 +17,9 @@ RUN java -XX:MaxPermSize=256m -Xmx1024M -jar AEM_${version}_Quickstart.jar -unpa
 COPY aem-author/org.apache.sling.commons.log.LogManager.config /aem/crx-quickstart/install/
 
 # Installs AEM
-RUN python aemInstaller.py -i AEM_${version}_Quickstart.jar -r author -p 4502
+WORKDIR /
+RUN chmod +x /aem/aemInstaller.py
+RUN python /aem/aemInstaller.py -i /aem/AEM_${version}_Quickstart.jar -r author -p 4502
 
 EXPOSE 4502 8000
 ENTRYPOINT ["/aem/crx-quickstart/bin/quickstart"]

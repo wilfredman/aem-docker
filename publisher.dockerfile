@@ -16,7 +16,9 @@ RUN java -XX:MaxPermSize=256m -Xmx1024M -jar AEM_${version}_Quickstart.jar -unpa
 COPY aem-publisher/org.apache.sling.commons.log.LogManager.config /aem/crx-quickstart/install
 
 # Installs AEM
-RUN python aemInstaller.py -i AEM_${version}_Quickstart.jar -r publish -p 4503
+WORKDIR /
+RUN chmod +x /aem/aemInstaller.py
+RUN python /aem/aemInstaller.py -i /aem/AEM_${version}_Quickstart.jar -r publish -p 4503
 
 WORKDIR /aem/crx-quickstart/bin
 #Replaces the port within the quickstart file with the standard publisher port
