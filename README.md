@@ -1,6 +1,11 @@
 # aem-docker
 Docker Images for Adobe Experience Manager
 
+This is a proof-of-concept I've modified and am archiving since\
+I have found a solution I like better at https://github.com/remcorakers/aem-docker-getting-started
+
+---
+
 AEM_6.X_Quickstart.jar & license.properties required in the project root
 
 [AEM Request Page](https://solutionpartners.adobe.com/home/enablement/access/mc-products.html)
